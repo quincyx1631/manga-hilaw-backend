@@ -1,3 +1,4 @@
+//user.controller.ts - backend controller for user-related operations
 import type { Request, Response, NextFunction } from "express"
 import { validationResult } from "express-validator"
 import { supabase } from "../utils/supabase"

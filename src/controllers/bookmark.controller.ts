@@ -1,41 +1,18 @@
 import { Request, Response } from "express"
 import { validationResult } from "express-validator"
 import { createClient } from "@supabase/supabase-js"
-
-// Bookmark interface
-interface Bookmark {
-  id?: string
-  user_id: string
-  manga_id: string
-  manga_hid: string
-  manga_title: string
-  manga_slug: string
-  manga_cover_b2key?: string
-  manga_status: number
-  manga_country: string
-  last_read_chapter?: string
-  last_read_chapter_hid?: string
-  last_read_at?: string
-  created_at?: string
-  updated_at?: string
-}
-
-interface BookmarkInput {
-  manga_id: string
-  manga_hid: string
-  manga_title: string
-  manga_slug: string
-  manga_cover_b2key?: string
-  manga_status?: number
-  manga_country?: string
-  last_read_chapter?: string
-  last_read_chapter_hid?: string
-}
+import { Bookmark, BookmarkInput } from "../types/bookmark.types"
 
 const supabase = createClient(
   process.env.SUPABASE_URL!,
   process.env.SUPABASE_SERVICE_ROLE_KEY!
 )
+
+const getUsernameFromAuth = async (userId: string): Promise<string | undefined> => {
+  const { data, error } = await supabase.auth.admin.getUserById(userId)
+  if (error || !data.user) return undefined
+  return data.user.user_metadata?.username || undefined
+}
 
 // @desc    Get user's bookmarks
 // @route   GET /api/bookmarks
@@ -114,6 +91,8 @@ export const addBookmark = async (req: Request, res: Response): Promise<void> =>
       return
     }
 
+    const username = await getUsernameFromAuth(req.user.id)
+
     const {
       manga_id,
       manga_hid,
@@ -128,6 +107,7 @@ export const addBookmark = async (req: Request, res: Response): Promise<void> =>
 
     const bookmarkData: Partial<Bookmark> = {
       user_id: req.user.id,
+      username,
       manga_id,
       manga_hid,
       manga_title,

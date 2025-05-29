@@ -1,6 +1,7 @@
 export interface Bookmark {
   id: string
   user_id: string
+  username?: string
   manga_id: string
   manga_hid: string
   manga_title: string
@@ -25,30 +26,4 @@ export interface BookmarkInput {
   manga_country?: string
   last_read_chapter?: string
   last_read_chapter_hid?: string
-}
-
-export interface BookmarkResponse {
-  success: boolean
-  message?: string
-  data?: Bookmark | Bookmark[]
-  pagination?: {
-    page: number
-    limit: number
-    total: number
-    pages: number
-  }
-  error?: string
-  errors?: any[]
-}
-
-export interface BookmarkCheckResponse {
-  success: boolean
-  isBookmarked: boolean
-  bookmarkData?: {
-    id: string
-    last_read_chapter?: string
-    last_read_at?: string
-  } | null
-  message?: string
-  error?: string
 }

@@ -1,21 +1,23 @@
-import type { Request, Response, NextFunction } from "express"
-import { validationResult } from "express-validator"
+import { Request, Response, NextFunction } from "express"
 import { supabase } from "../utils/supabase"
 import { AppError } from "../utils/appError"
-import logger from "../utils/logger"
 
 export const register = async (req: Request, res: Response, next: NextFunction) => {
+  const { email, password } = req.body
+
+  if (!email || !password || !req.body.username) {
+    return next(new AppError("Please provide email, password and username", 400))
+  }
+
   try {
-    const errors = validationResult(req)
-    if (!errors.isEmpty()) {
-      return next(new AppError("Validation error", 400, errors.array()))
-    }
-
-    const { email, password } = req.body
-
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
+      options: {
+        data: {
+          username: req.body.username
+        }
+      }
     })
 
     if (error) {
@@ -24,7 +26,7 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
 
     res.status(201).json({
       success: true,
-      message: "Registration successful. Please check your email for verification.",
+      message: "User registered successfully. Please verify your email.",
       data: {
         user: {
           id: data.user?.id,
@@ -33,26 +35,25 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
       },
     })
   } catch (error: any) {
-    next(new AppError(error.message || "Registration failed", 500))
+    next(new AppError(error.message || "Failed to register user", 500))
   }
 }
 
 export const login = async (req: Request, res: Response, next: NextFunction) => {
+  const { email, password } = req.body
+
+  if (!email || !password) {
+    return next(new AppError("Please provide email and password", 400))
+  }
+
   try {
-    const errors = validationResult(req)
-    if (!errors.isEmpty()) {
-      return next(new AppError("Validation error", 400, errors.array()))
-    }
-
-    const { email, password } = req.body
-
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
     })
 
     if (error) {
-      return next(new AppError("Invalid credentials", 401))
+      return next(new AppError(error.message, 400))
     }
 
     res.status(200).json({
@@ -62,6 +63,7 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
         user: {
           id: data.user.id,
           email: data.user.email,
+          username: data.user.user_metadata?.username || null,
         },
         session: {
           access_token: data.session.access_token,
@@ -71,7 +73,7 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
       },
     })
   } catch (error: any) {
-    next(new AppError(error.message || "Login failed", 500))
+    next(new AppError(error.message || "Failed to login", 500))
   }
 }
 
@@ -80,89 +82,39 @@ export const logout = async (req: Request, res: Response, next: NextFunction) =>
     const { error } = await supabase.auth.signOut()
 
     if (error) {
-      logger.error("Logout error:", error)
-      return next(new AppError("Logout failed", 500))
+      return next(new AppError(error.message, 400))
     }
 
     res.status(200).json({
       success: true,
-      message: "Logged out successfully",
+      message: "Logout successful",
     })
   } catch (error: any) {
-    next(new AppError(error.message || "Logout failed", 500))
+    next(new AppError(error.message || "Failed to logout", 500))
   }
 }
 
 export const getCurrentUser = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const userId = req.user.id
-    const { data: profileData, error: profileError } = await supabase
-      .from("profiles")
-      .select("*")
-      .eq("id", userId)
-      .single()
-
-    if (profileError) {
-      logger.error("Profile fetch error:", profileError)
-      return next(new AppError("Error fetching user profile", 500))
+    const { data: { user }, error } = await supabase.auth.getUser(req.headers.authorization?.replace('Bearer ', ''))
+    
+    if (error || !user) {
+      return next(new AppError("User not found", 404))
     }
 
     res.status(200).json({
       success: true,
       data: {
         user: {
-          id: req.user.id,
-          email: req.user.email,
-          username: profileData.username,
-          created_at: profileData.created_at,
-          updated_at: profileData.updated_at,
+          id: user.id,
+          email: user.email,
+          username: user.user_metadata?.username || null,
+          created_at: user.created_at,
+          updated_at: user.updated_at,
         },
       },
     })
   } catch (error: any) {
     next(new AppError(error.message || "Failed to get user data", 500))
-  }
-}
-
-export const forgotPassword = async (req: Request, res: Response, next: NextFunction) => {
-  try {
-    const { email } = req.body
-    const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${process.env.CLIENT_URL}/reset-password`,
-    })
-
-    if (error) {
-      logger.error("Password reset request error:", error)
-      return next(new AppError(error.message, 400))
-    }
-
-    res.status(200).json({
-      success: true,
-      message: "Password reset email sent",
-    })
-  } catch (error: any) {
-    next(new AppError(error.message || "Password reset request failed", 500))
-  }
-}
-
-export const resetPassword = async (req: Request, res: Response, next: NextFunction) => {
-  try {
-    const { password } = req.body
-
-    const { error } = await supabase.auth.updateUser({
-      password,
-    })
-
-    if (error) {
-      logger.error("Password reset error:", error)
-      return next(new AppError(error.message, 400))
-    }
-
-    res.status(200).json({
-      success: true,
-      message: "Password has been reset successfully",
-    })
-  } catch (error: any) {
-    next(new AppError(error.message || "Password reset failed", 500))
   }
 }
