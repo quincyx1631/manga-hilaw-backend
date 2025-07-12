@@ -1,7 +1,7 @@
 import { Request, Response } from "express"
 import { validationResult } from "express-validator"
 import { createClient } from "@supabase/supabase-js"
-import { Bookmark, BookmarkInput } from "../types/bookmark.types"
+import { Bookmark, BookmarkInput, ReadingStatus } from "../types/bookmark.types"
 
 const supabase = createClient(
   process.env.SUPABASE_URL!,
@@ -27,15 +27,28 @@ export const getBookmarks = async (req: Request, res: Response): Promise<void> =
       return
     }
 
-    const { page = "1", limit = "20", sort = "updated_at", order = "desc" } = req.query
+    const { 
+      page = "1", 
+      limit = "20", 
+      sort = "updated_at", 
+      order = "desc",
+      reading_status 
+    } = req.query
+    
     const pageNum = parseInt(page as string)
     const limitNum = parseInt(limit as string)
     const offset = (pageNum - 1) * limitNum
 
-    const { data, error, count } = await supabase
+    let query = supabase
       .from('bookmarks')
       .select('*', { count: 'exact' })
       .eq('user_id', req.user.id)
+
+    if (reading_status) {
+      query = query.eq('reading_status', reading_status)
+    }
+
+    const { data, error, count } = await query
       .order(sort as string, { ascending: order === 'asc' })
       .range(offset, offset + limitNum - 1)
 
@@ -102,7 +115,8 @@ export const addBookmark = async (req: Request, res: Response): Promise<void> =>
       manga_status = 1,
       manga_country = 'jp',
       last_read_chapter,
-      last_read_chapter_hid
+      last_read_chapter_hid,
+      reading_status = 'plan_to_read'  
     }: BookmarkInput = req.body
 
     const bookmarkData: Partial<Bookmark> = {
@@ -117,6 +131,7 @@ export const addBookmark = async (req: Request, res: Response): Promise<void> =>
       manga_country,
       last_read_chapter,
       last_read_chapter_hid,
+      reading_status,  
       last_read_at: last_read_chapter ? new Date().toISOString() : undefined
     }
 
@@ -422,6 +437,86 @@ export const checkBookmark = async (req: Request, res: Response): Promise<void> 
     })
   } catch (error) {
     console.error("Check bookmark error:", error)
+    res.status(500).json({
+      success: false,
+      message: "Internal server error"
+    })
+  }
+}
+
+// @desc    Update reading status
+// @route   PUT /api/bookmarks/:id/status
+// @access  Private
+export const updateReadingStatus = async (req: Request, res: Response): Promise<void> => {
+  try {
+    if (!req.user) {
+      res.status(401).json({
+        success: false,
+        message: "User not authenticated"
+      })
+      return
+    }
+
+    // Check for validation errors
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+      res.status(400).json({
+        success: false,
+        message: "Validation failed",
+        errors: errors.array()
+      })
+      return
+    }
+
+    const { id } = req.params
+    const { reading_status }: { reading_status: string } = req.body
+
+    // Validate reading_status
+    const validStatuses = ['plan_to_read', 'reading', 'on_hold', 'dropped', 'completed']
+    if (!validStatuses.includes(reading_status)) {
+      res.status(400).json({
+        success: false,
+        message: "Invalid reading status"
+      })
+      return
+    }
+
+    const updateData: Partial<Bookmark> = {
+      reading_status: reading_status as ReadingStatus
+    }
+
+    const { data, error } = await supabase
+      .from('bookmarks')
+      .update(updateData)
+      .eq('id', id)
+      .eq('user_id', req.user.id)
+      .select()
+      .single()
+
+    if (error) {
+      res.status(400).json({
+        success: false,
+        message: "Failed to update reading status",
+        error: error.message
+      })
+      return
+    }
+
+    if (!data) {
+      res.status(404).json({
+        success: false,
+        message: "Bookmark not found"
+      })
+      return
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Reading status updated successfully",
+      data
+    })
+  } catch (error) {
+    console.error("Update reading status error:", error)
     res.status(500).json({
       success: false,
       message: "Internal server error"

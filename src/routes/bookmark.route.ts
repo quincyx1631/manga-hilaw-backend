@@ -1,12 +1,13 @@
 import express from "express"
 import { body, param } from "express-validator"
-import { 
-  getBookmarks, 
-  addBookmark, 
-  updateBookmark, 
-  removeBookmark, 
+import {
+  getBookmarks,
+  addBookmark,
+  updateBookmark,
+  removeBookmark,
   checkBookmark,
-  updateReadingProgress 
+  updateReadingProgress,
+  updateReadingStatus  // Add this import
 } from "../controllers/bookmark.controller"
 import { protect } from "../middleware/auth.middleware"
 
@@ -31,6 +32,7 @@ router.post(
     body("manga_country").optional().isLength({ min: 2, max: 2 }),
     body("last_read_chapter").optional().isString(),
     body("last_read_chapter_hid").optional().isString(),
+    body("reading_status").optional().isIn(['plan_to_read', 'reading', 'on_hold', 'dropped', 'completed']).withMessage("Invalid reading status"), // Add this validation
   ],
   addBookmark
 )
@@ -55,6 +57,18 @@ router.put(
     body("last_read_chapter_hid").notEmpty().withMessage("Chapter HID is required"),
   ],
   updateReadingProgress
+)
+
+// PUT /api/bookmarks/:id/status - Update reading status (ADD THIS NEW ROUTE)
+router.put(
+  "/:id/status",
+  [
+    param("id").isUUID().withMessage("Invalid bookmark ID"),
+    body("reading_status")
+      .isIn(['plan_to_read', 'reading', 'on_hold', 'dropped', 'completed'])
+      .withMessage("Invalid reading status")
+  ],
+  updateReadingStatus
 )
 
 // DELETE /api/bookmarks/:id - Remove bookmark
