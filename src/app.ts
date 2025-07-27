@@ -9,12 +9,14 @@ import userRoutes from "./routes/user.routes"
 import profileRoutes from "./routes/profile.routes"
 import config from "./config"
 import bookmarkRoutes from "./routes/bookmark.route"
+import cookieParser from "cookie-parser"
 
 const app = express()
 
 // Middleware
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(cookieParser())
 app.use(
   cors({
     origin: config.clientUrl,

@@ -1,170 +1,18 @@
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-12 21:54:09"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-12 21:54:09"}
-{"level":"error","message":"POST /api/auth/register - Validation error","service":"mangahilaw-backend","stack":"Error: Validation error\n    at register (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\auth.controller.ts:11:19)\n    at Layer.handleRequest (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\node_modules\\router\\lib\\route.js:157:13)\n    at middleware (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)","statusCode":400,"timestamp":"2025-05-12 22:03:16"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-12 22:03:58"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-12 22:03:58"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-12 22:49:00"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-12 22:49:00"}
-{"level":"error","message":"POST /api/auth/register - Email address \"test@example.com\" is invalid","service":"mangahilaw-backend","stack":"Error: Email address \"test@example.com\" is invalid\n    at register (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\auth.controller.ts:22:19)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":400,"timestamp":"2025-05-12 22:49:24"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-12 22:52:07"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-12 22:52:07"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-14 19:14:30"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-14 19:14:30"}
-{"level":"error","message":"POST /api/auth/login - Invalid credentials","service":"mangahilaw-backend","stack":"Error: Invalid credentials\n    at login (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\auth.controller.ts:55:19)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":401,"timestamp":"2025-05-14 19:42:49"}
-{"level":"error","message":"POST /api/auth/login - Invalid credentials","service":"mangahilaw-backend","stack":"Error: Invalid credentials\n    at login (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\auth.controller.ts:55:19)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":401,"timestamp":"2025-05-14 19:46:12"}
-{"level":"error","message":"POST /api/auth/login - Invalid credentials","service":"mangahilaw-backend","stack":"Error: Invalid credentials\n    at login (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\auth.controller.ts:55:19)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":401,"timestamp":"2025-05-14 19:51:28"}
-{"level":"error","message":"POST /api/auth/login - Invalid credentials","service":"mangahilaw-backend","stack":"Error: Invalid credentials\n    at login (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\auth.controller.ts:55:19)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":401,"timestamp":"2025-05-14 20:01:32"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-15 19:06:51"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-15 19:06:51"}
-{"level":"error","message":"POST /api/auth/login - Invalid credentials","service":"mangahilaw-backend","stack":"Error: Invalid credentials\n    at login (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\auth.controller.ts:55:19)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":401,"timestamp":"2025-05-15 19:46:04"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-22 21:25:59"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-22 21:25:59"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-24 22:06:37"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-24 22:06:37"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-24 22:24:18"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-24 22:24:18"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-25 22:19:42"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-25 22:19:42"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-25 22:31:28"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-25 22:31:28"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-25 22:35:27"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-25 22:35:27"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-25 22:35:48"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-25 22:35:48"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-25 22:35:58"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-25 22:35:58"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-25 22:36:06"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-25 22:36:06"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-25 22:36:22"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-25 22:36:22"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-25 22:40:49"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-25 22:40:49"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-27 20:46:19"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-27 20:46:19"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-27 21:02:53"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-27 21:02:53"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-27 22:00:37"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-27 22:00:37"}
-{"level":"error","message":"GET /api/bookmarks/check/109704 - The user belonging to this token no longer exists.","service":"mangahilaw-backend","stack":"Error: The user belonging to this token no longer exists.\n    at protect (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\middleware\\auth.middleware.ts:27:19)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":401,"timestamp":"2025-05-27 22:24:03"}
-{"level":"error","message":"GET /api/bookmarks/check/109704 - The user belonging to this token no longer exists.","service":"mangahilaw-backend","stack":"Error: The user belonging to this token no longer exists.\n    at protect (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\middleware\\auth.middleware.ts:27:19)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":401,"timestamp":"2025-05-27 22:24:03"}
-{"level":"error","message":"POST /api/auth/logout - You are not logged in! Please log in to get access.","service":"mangahilaw-backend","stack":"Error: You are not logged in! Please log in to get access.\n    at protect (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\middleware\\auth.middleware.ts:21:19)\n    at Layer.handleRequest (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\node_modules\\router\\lib\\layer.js:152:17)\n    at D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\node_modules\\router\\index.js:295:15\n    at processParams (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\node_modules\\router\\index.js:582:12)\n    at next (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\node_modules\\router\\index.js:291:5)\n    at Function.handle (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\node_modules\\router\\index.js:186:3)","statusCode":401,"timestamp":"2025-05-27 22:24:41"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-29 21:30:10"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-29 21:30:10"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-29 21:44:25"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-29 21:44:25"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-29 22:06:34"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-29 22:06:34"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-29 22:06:59"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-29 22:06:59"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-29 22:07:44"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-29 22:07:44"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-29 22:08:45"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-29 22:08:45"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-29 22:10:34"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-29 22:10:34"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-05-29 22:12:44"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-05-29 22:12:44"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-09 20:21:25"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-09 20:21:25"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-09 20:51:08"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-09 20:51:08"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-12 22:13:04"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-12 22:13:04"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-12 22:19:14"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-12 22:19:14"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-12 22:40:10"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-12 22:40:10"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-12 22:48:24"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-12 22:48:24"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-12 22:49:21"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-12 22:49:21"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-12 22:51:32"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-12 22:51:32"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-12 22:52:00"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-12 22:52:00"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-12 22:53:02"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-12 22:53:02"}
-{"level":"error","message":"POST /api/auth/login - Invalid login credentials","service":"mangahilaw-backend","stack":"Error: Invalid login credentials\n    at login (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\auth.controller.ts:56:19)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":400,"timestamp":"2025-07-12 23:03:29"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-17 19:20:46"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-17 19:20:46"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-17 22:33:53"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-17 22:33:53"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-19 23:32:37"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-19 23:32:37"}
-{"level":"error","message":"POST /api/auth/login - Invalid login credentials","service":"mangahilaw-backend","stack":"Error: Invalid login credentials\n    at login (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\auth.controller.ts:56:19)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":400,"timestamp":"2025-07-19 23:35:29"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-25 20:24:04"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-25 20:24:04"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-26 20:36:44"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-26 20:36:44"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-26 21:33:32"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-26 21:33:32"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 17:55:37"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 17:55:37"}
-{"level":"error","message":"POST /api/auth/login - fetch failed","service":"mangahilaw-backend","stack":"Error: fetch failed\n    at login (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\auth.controller.ts:56:19)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":400,"timestamp":"2025-07-27 17:58:48"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 18:22:46"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 18:22:46"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 18:23:00"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 18:23:00"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 18:23:09"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 18:23:09"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 18:26:00"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 18:26:00"}
-{"code":"PGRST116","details":"The result contains 0 rows","hint":null,"level":"error","message":"JSON object requested, multiple (or no) rows returned","service":"mangahilaw-backend","timestamp":"2025-07-27 18:33:44"}
-{"level":"error","message":"GET /api/profile - Error fetching profile","service":"mangahilaw-backend","stack":"Error: Error fetching profile\n    at getProfile (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\profile.controller.ts:146:19)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":500,"timestamp":"2025-07-27 18:33:44"}
-{"code":"PGRST116","details":"The result contains 0 rows","hint":null,"level":"error","message":"JSON object requested, multiple (or no) rows returned","service":"mangahilaw-backend","timestamp":"2025-07-27 18:34:10"}
-{"level":"error","message":"GET /api/profile - Error fetching profile","service":"mangahilaw-backend","stack":"Error: Error fetching profile\n    at getProfile (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\profile.controller.ts:146:19)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":500,"timestamp":"2025-07-27 18:34:10"}
-{"code":"PGRST116","details":"The result contains 0 rows","hint":null,"level":"error","message":"JSON object requested, multiple (or no) rows returned","service":"mangahilaw-backend","timestamp":"2025-07-27 18:34:10"}
-{"level":"error","message":"GET /api/profile - Error fetching profile","service":"mangahilaw-backend","stack":"Error: Error fetching profile\n    at getProfile (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\profile.controller.ts:146:19)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":500,"timestamp":"2025-07-27 18:34:10"}
-{"code":"PGRST116","details":"The result contains 0 rows","hint":null,"level":"error","message":"JSON object requested, multiple (or no) rows returned","service":"mangahilaw-backend","timestamp":"2025-07-27 18:34:36"}
-{"level":"error","message":"POST /api/profile/upload-image - Failed to update profile","service":"mangahilaw-backend","stack":"Error: Failed to update profile\n    at uploadProfileImage (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\profile.controller.ts:72:19)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":500,"timestamp":"2025-07-27 18:34:36"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 18:38:38"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 18:38:38"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 18:38:53"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 18:38:53"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 18:39:09"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 18:39:09"}
-{"level":"info","message":"Creating profile for user 0415ef84-487e-4ccf-932a-5eb716760244","service":"mangahilaw-backend","timestamp":"2025-07-27 18:40:29"}
-{"code":"42501","details":null,"hint":null,"level":"error","message":"new row violates row-level security policy for table \"profiles\"","service":"mangahilaw-backend","timestamp":"2025-07-27 18:40:29"}
-{"level":"error","message":"GET /api/profile - Error creating profile","service":"mangahilaw-backend","stack":"Error: Error creating profile\n    at getProfile (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\profile.controller.ts:203:21)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":500,"timestamp":"2025-07-27 18:40:29"}
-{"level":"info","message":"Creating profile for user 0415ef84-487e-4ccf-932a-5eb716760244","service":"mangahilaw-backend","timestamp":"2025-07-27 18:40:40"}
-{"code":"42501","details":null,"hint":null,"level":"error","message":"new row violates row-level security policy for table \"profiles\"","service":"mangahilaw-backend","timestamp":"2025-07-27 18:40:40"}
-{"level":"error","message":"GET /api/profile - Error creating profile","service":"mangahilaw-backend","stack":"Error: Error creating profile\n    at getProfile (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\profile.controller.ts:203:21)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":500,"timestamp":"2025-07-27 18:40:40"}
-{"level":"info","message":"Creating profile for user 0415ef84-487e-4ccf-932a-5eb716760244","service":"mangahilaw-backend","timestamp":"2025-07-27 18:40:41"}
-{"code":"42501","details":null,"hint":null,"level":"error","message":"new row violates row-level security policy for table \"profiles\"","service":"mangahilaw-backend","timestamp":"2025-07-27 18:40:41"}
-{"level":"error","message":"GET /api/profile - Error creating profile","service":"mangahilaw-backend","stack":"Error: Error creating profile\n    at getProfile (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\profile.controller.ts:203:21)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":500,"timestamp":"2025-07-27 18:40:41"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 18:42:15"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 18:42:15"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 18:42:33"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 18:42:33"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 18:42:44"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 18:42:44"}
-{"level":"info","message":"No profile found for user 0415ef84-487e-4ccf-932a-5eb716760244, returning basic info","service":"mangahilaw-backend","timestamp":"2025-07-27 18:43:54"}
-{"level":"info","message":"No profile found for user 0415ef84-487e-4ccf-932a-5eb716760244, returning basic info","service":"mangahilaw-backend","timestamp":"2025-07-27 18:43:55"}
-{"level":"info","message":"Creating new profile for user 0415ef84-487e-4ccf-932a-5eb716760244 with image","service":"mangahilaw-backend","timestamp":"2025-07-27 18:44:06"}
-{"code":"42501","details":null,"hint":null,"level":"error","message":"new row violates row-level security policy for table \"profiles\"","service":"mangahilaw-backend","timestamp":"2025-07-27 18:44:06"}
-{"level":"error","message":"POST /api/profile/upload-image - Failed to create profile","service":"mangahilaw-backend","stack":"Error: Failed to create profile\n    at uploadProfileImage (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\profile.controller.ts:86:21)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":500,"timestamp":"2025-07-27 18:44:06"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 18:46:10"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 18:46:10"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 18:46:23"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 18:46:23"}
-{"level":"info","message":"No profile found for user 0415ef84-487e-4ccf-932a-5eb716760244, returning basic info","service":"mangahilaw-backend","timestamp":"2025-07-27 18:50:47"}
-{"level":"info","message":"Creating new profile for user 0415ef84-487e-4ccf-932a-5eb716760244 with image","service":"mangahilaw-backend","timestamp":"2025-07-27 18:50:54"}
-{"code":"23505","details":"Key (id)=(0415ef84-487e-4ccf-932a-5eb716760244) already exists.","hint":null,"level":"error","message":"duplicate key value violates unique constraint \"profiles_pkey\"","service":"mangahilaw-backend","timestamp":"2025-07-27 18:50:54"}
-{"level":"error","message":"POST /api/profile/upload-image - Failed to create profile","service":"mangahilaw-backend","stack":"Error: Failed to create profile\n    at uploadProfileImage (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\profile.controller.ts:86:21)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":500,"timestamp":"2025-07-27 18:50:54"}
-{"level":"info","message":"No profile found for user 0415ef84-487e-4ccf-932a-5eb716760244, returning basic info","service":"mangahilaw-backend","timestamp":"2025-07-27 18:51:08"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 18:52:56"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 18:52:56"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 18:53:09"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 18:53:09"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 18:53:16"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 18:53:16"}
-{"code":"PGRST116","details":"The result contains 0 rows","hint":null,"level":"error","message":"JSON object requested, multiple (or no) rows returned","service":"mangahilaw-backend","timestamp":"2025-07-27 18:56:51"}
-{"level":"error","message":"POST /api/profile/upload-image - Failed to update profile","service":"mangahilaw-backend","stack":"Error: Failed to update profile\n    at uploadProfileImage (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\controllers\\profile.controller.ts:107:21)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":500,"timestamp":"2025-07-27 18:56:51"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 18:57:37"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 18:57:37"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 18:57:43"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 18:57:43"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 18:57:54"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 18:57:54"}
-{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 18:58:00"}
-{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 18:58:00"}
+{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 22:32:05"}
+{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 22:32:05"}
+{"level":"error","message":"GET /api/profile - The user belonging to this token no longer exists.","service":"mangahilaw-backend","stack":"Error: The user belonging to this token no longer exists.\n    at protect (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\middleware\\auth.middleware.ts:27:19)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":401,"timestamp":"2025-07-27 22:32:13"}
+{"level":"error","message":"GET /api/profile - The user belonging to this token no longer exists.","service":"mangahilaw-backend","stack":"Error: The user belonging to this token no longer exists.\n    at protect (D:\\Classroom Drive\\OneDrive - Bulacan State University\\Documents\\GitHub\\MangaHilaw-Backend\\src\\middleware\\auth.middleware.ts:27:19)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","statusCode":401,"timestamp":"2025-07-27 22:32:14"}
+{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 23:10:25"}
+{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 23:10:25"}
+{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 23:15:08"}
+{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 23:15:08"}
+{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 23:31:52"}
+{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 23:31:52"}
+{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 23:33:03"}
+{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 23:33:03"}
+{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 23:35:17"}
+{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 23:35:17"}
+{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 23:35:29"}
+{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 23:35:29"}
+{"level":"info","message":"Server running on port 5000","service":"mangahilaw-backend","timestamp":"2025-07-27 23:35:48"}
+{"level":"info","message":"Environment: development","service":"mangahilaw-backend","timestamp":"2025-07-27 23:35:48"}

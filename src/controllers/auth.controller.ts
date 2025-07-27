@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from "express"
 import { supabase } from "../utils/supabase"
 import { AppError } from "../utils/appError"
+import jwt from "jsonwebtoken"
 
 export const register = async (req: Request, res: Response, next: NextFunction) => {
   const { email, password } = req.body
@@ -56,6 +57,23 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
       return next(new AppError(error.message, 400))
     }
 
+    const token = jwt.sign(
+      {
+        id: data.user.id,
+        email: data.user.email,
+        username: data.user.user_metadata?.username || null,
+      },
+      process.env.JWT_SECRET as string,
+      { expiresIn: "7d" }
+    )
+
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      maxAge: 7 * 24 * 60 * 60 * 1000, 
+    })
+
     res.status(200).json({
       success: true,
       message: "Login successful",
@@ -64,11 +82,6 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
           id: data.user.id,
           email: data.user.email,
           username: data.user.user_metadata?.username || null,
-        },
-        session: {
-          access_token: data.session.access_token,
-          refresh_token: data.session.refresh_token,
-          expires_at: data.session.expires_at,
         },
       },
     })
@@ -84,6 +97,12 @@ export const logout = async (req: Request, res: Response, next: NextFunction) =>
     if (error) {
       return next(new AppError(error.message, 400))
     }
+
+    res.clearCookie("token", {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+    })
 
     res.status(200).json({
       success: true,
