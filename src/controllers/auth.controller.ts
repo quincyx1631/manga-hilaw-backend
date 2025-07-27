@@ -67,11 +67,12 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
       { expiresIn: "7d" }
     )
 
+    // Set HTTP-only cookie
     res.cookie("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
-      maxAge: 7 * 24 * 60 * 60 * 1000, 
+      secure: true, // must be true for SameSite: 'none'
+      sameSite: "none", // use 'none' for cross-site cookies
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     })
 
     res.status(200).json({
@@ -98,10 +99,11 @@ export const logout = async (req: Request, res: Response, next: NextFunction) =>
       return next(new AppError(error.message, 400))
     }
 
+    // Clear the cookie
     res.clearCookie("token", {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
+      secure: true,
+      sameSite: "none",
     })
 
     res.status(200).json({

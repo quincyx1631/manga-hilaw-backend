@@ -19,10 +19,10 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 app.use(
   cors({
-    origin: config.clientUrl,
+    origin: "https://manga-hilaw.vercel.app",
     credentials: true,
-  }),
-)
+  })
+);
 app.use(helmet())
 app.use(morgan("dev"))
 
