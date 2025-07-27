@@ -6,6 +6,7 @@ import { errorHandler } from "./middleware/errorHandler"
 import { notFoundHandler } from "./middleware/notFoundHandler"
 import authRoutes from "./routes/auth.routes"
 import userRoutes from "./routes/user.routes"
+import profileRoutes from "./routes/profile.routes"
 import config from "./config"
 import bookmarkRoutes from "./routes/bookmark.route"
 
@@ -26,8 +27,7 @@ app.use(morgan("dev"))
 // Routes
 app.use("/api/auth", authRoutes)
 app.use("/api/users", userRoutes)
-
-app.use("/api/auth", authRoutes)
+app.use("/api/profile", profileRoutes)
 app.use("/api/bookmarks", bookmarkRoutes)
 
 // Health check endpoint
