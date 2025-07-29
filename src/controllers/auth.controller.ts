@@ -66,16 +66,15 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
       process.env.JWT_SECRET as string,
       { expiresIn: "7d" }
     )
-
-    // Set HTTP-only cookie
     const isProduction = process.env.NODE_ENV === "production"
-    res.cookie("token", token, {
+    const cookieOptions = {
       httpOnly: true,
-      secure: isProduction, // only secure in production
-      sameSite: isProduction ? "none" : "lax", // use 'lax' in development
-      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
-      domain: isProduction ? process.env.COOKIE_DOMAIN : undefined, // only set domain in production
-    })
+      secure: isProduction, 
+      sameSite: isProduction ? "none" as const : "lax" as const,
+      maxAge: 7 * 24 * 60 * 60 * 1000, 
+    }
+    
+    res.cookie("token", token, cookieOptions)
 
     res.status(200).json({
       success: true,
@@ -103,12 +102,15 @@ export const logout = async (req: Request, res: Response, next: NextFunction) =>
 
     // Clear the cookie
     const isProduction = process.env.NODE_ENV === "production"
-    res.clearCookie("token", {
+    const cookieOptions = {
       httpOnly: true,
       secure: isProduction,
-      sameSite: isProduction ? "none" : "lax",
-      domain: isProduction ? process.env.COOKIE_DOMAIN : undefined,
-    })
+      sameSite: isProduction ? "none" as const : "lax" as const,
+      // Don't set domain for cross-origin setup
+      // domain: isProduction ? process.env.COOKIE_DOMAIN : undefined,
+    }
+    
+    res.clearCookie("token", cookieOptions)
 
     res.status(200).json({
       success: true,
