@@ -68,12 +68,13 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
     )
 
     // Set HTTP-only cookie
+    const isProduction = process.env.NODE_ENV === "production"
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true, // must be true for SameSite: 'none'
-      sameSite: "none", // use 'none' for cross-site cookies
+      secure: isProduction, // only secure in production
+      sameSite: isProduction ? "none" : "lax", // use 'lax' in development
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
-      domain: process.env.COOKIE_DOMAIN || undefined, // set domain if provided
+      domain: isProduction ? process.env.COOKIE_DOMAIN : undefined, // only set domain in production
     })
 
     res.status(200).json({
@@ -101,11 +102,12 @@ export const logout = async (req: Request, res: Response, next: NextFunction) =>
     }
 
     // Clear the cookie
+    const isProduction = process.env.NODE_ENV === "production"
     res.clearCookie("token", {
       httpOnly: true,
-      secure: true,
-      sameSite: "none",
-      domain: process.env.COOKIE_DOMAIN || undefined, // set domain if provided
+      secure: isProduction,
+      sameSite: isProduction ? "none" : "lax",
+      domain: isProduction ? process.env.COOKIE_DOMAIN : undefined,
     })
 
     res.status(200).json({
@@ -119,9 +121,7 @@ export const logout = async (req: Request, res: Response, next: NextFunction) =>
 
 export const getCurrentUser = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { data: { user }, error } = await supabase.auth.getUser(req.headers.authorization?.replace('Bearer ', ''))
-    
-    if (error || !user) {
+    if (!req.user) {
       return next(new AppError("User not found", 404))
     }
 
@@ -129,11 +129,9 @@ export const getCurrentUser = async (req: Request, res: Response, next: NextFunc
       success: true,
       data: {
         user: {
-          id: user.id,
-          email: user.email,
-          username: user.user_metadata?.username || null,
-          created_at: user.created_at,
-          updated_at: user.updated_at,
+          id: req.user.id,
+          email: req.user.email,
+          username: req.user.username || null,
         },
       },
     })
