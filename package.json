@@ -2,7 +2,9 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.49.4",
     "@types/cookie-parser": "^1.4.9",
+    "@types/cors": "^2.8.19",
     "@types/jsonwebtoken": "^9.0.10",
+    "@types/morgan": "^1.9.10",
     "@types/multer": "^2.0.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
@@ -16,9 +18,7 @@
     "winston": "^3.17.0"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.1",
-    "@types/morgan": "^1.9.10",
     "@types/node": "^22.15.17",
     "@typescript-eslint/eslint-plugin": "^8.32.0",
     "@typescript-eslint/parser": "^8.32.0",
