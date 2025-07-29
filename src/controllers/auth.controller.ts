@@ -73,6 +73,7 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
       secure: true, // must be true for SameSite: 'none'
       sameSite: "none", // use 'none' for cross-site cookies
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+      domain: process.env.COOKIE_DOMAIN || undefined, // set domain if provided
     })
 
     res.status(200).json({
@@ -104,6 +105,7 @@ export const logout = async (req: Request, res: Response, next: NextFunction) =>
       httpOnly: true,
       secure: true,
       sameSite: "none",
+      domain: process.env.COOKIE_DOMAIN || undefined, // set domain if provided
     })
 
     res.status(200).json({

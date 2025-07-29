@@ -10,6 +10,8 @@ import profileRoutes from "./routes/profile.routes"
 import config from "./config"
 import bookmarkRoutes from "./routes/bookmark.route"
 import cookieParser from "cookie-parser"
+import dotenv from "dotenv"
+dotenv.config()
 
 const app = express()
 
@@ -17,9 +19,20 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(",")
+  : ["https://manga-hilaw.vercel.app"];
+
 app.use(
   cors({
-    origin: "https://manga-hilaw.vercel.app",
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      } else {
+        return callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
