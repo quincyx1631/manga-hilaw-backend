@@ -1,6 +1,6 @@
 import express from "express"
 import { body } from "express-validator"
-import { register, login, logout, getCurrentUser, /*forgotPassword, resetPassword*/ } from "../controllers/auth.controller"
+import { register, login, logout } from "../controllers/auth.controller"
 import { protect } from "../middleware/auth.middleware"
 
 const router = express.Router()
@@ -23,12 +23,5 @@ router.post(
   login,
 )
 router.post("/logout", protect, logout)
-router.get("/me", protect, getCurrentUser)
-// router.post("/forgot-password", [body("email").isEmail().withMessage("Please provide a valid email")], forgotPassword)
-// router.post(
-//   "/reset-password",
-//   [body("password").isLength({ min: 8 }).withMessage("Password must be at least 8 characters long")],
-//   resetPassword,
-// )
 
 export default router

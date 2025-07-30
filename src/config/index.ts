@@ -7,6 +7,7 @@ const config = {
   nodeEnv: process.env.NODE_ENV || "development",
   port: process.env.PORT ? Number.parseInt(process.env.PORT, 10) : 5000,
   clientUrl: process.env.CLIENT_URL || "http://localhost:3000",
+  jwtSecret: process.env.JWT_SECRET || "",
 
   supabase: {
     url: process.env.SUPABASE_URL || "",
@@ -15,7 +16,7 @@ const config = {
   },
 }
 
-const requiredEnvVars = ["SUPABASE_URL", "SUPABASE_ANON_KEY"]
+const requiredEnvVars = ["SUPABASE_URL", "SUPABASE_ANON_KEY", "JWT_SECRET"]
 const missingEnvVars = requiredEnvVars.filter((envVar) => !process.env[envVar])
 
 if (missingEnvVars.length > 0) {

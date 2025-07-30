@@ -9,7 +9,6 @@ import userRoutes from "./routes/user.routes"
 import profileRoutes from "./routes/profile.routes"
 import config from "./config"
 import bookmarkRoutes from "./routes/bookmark.route"
-import cookieParser from "cookie-parser"
 import dotenv from "dotenv"
 dotenv.config()
 
@@ -18,7 +17,6 @@ const app = express()
 // Middleware
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(cookieParser())
 const allowedOrigins = process.env.ALLOWED_ORIGINS
   ? process.env.ALLOWED_ORIGINS.split(",")
   : ["https://manga-hilaw.vercel.app"];
@@ -36,7 +34,7 @@ app.use(
         return callback(new Error("Not allowed by CORS"));
       }
     },
-    credentials: true,
+    credentials: false, // No longer needed since we're not using cookies
   })
 );
 app.use(helmet())
