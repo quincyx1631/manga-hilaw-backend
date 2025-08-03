@@ -7,8 +7,8 @@ import { notFoundHandler } from "./middleware/notFoundHandler"
 import authRoutes from "./routes/auth.routes"
 import userRoutes from "./routes/user.routes"
 import profileRoutes from "./routes/profile.routes"
-import config from "./config"
 import bookmarkRoutes from "./routes/bookmark.route"
+import commentRoutes from "./routes/comment.routes"
 import dotenv from "dotenv"
 dotenv.config()
 
@@ -34,7 +34,7 @@ app.use(
         return callback(new Error("Not allowed by CORS"));
       }
     },
-    credentials: false, // No longer needed since we're not using cookies
+    credentials: false,
   })
 );
 app.use(helmet())
@@ -45,6 +45,7 @@ app.use("/api/auth", authRoutes)
 app.use("/api/users", userRoutes)
 app.use("/api/profile", profileRoutes)
 app.use("/api/bookmarks", bookmarkRoutes)
+app.use("/api/comments", commentRoutes)
 
 // Health check endpoint
 app.get("/health", (req, res) => {
